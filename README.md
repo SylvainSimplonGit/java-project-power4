@@ -55,7 +55,7 @@ comme dans l’exemple ci-dessous :
         - passer la main à l’autre joueur
     - Annoncer le résultat de la partie
 
-  [Exemple d'algorithme](resources/brief/Algoritm-example.html)
+<a href="resources/brief/Algoritm-example.html" target="_blank">Exemple d'algorithme</a>
 
 - à la façon dont vous allez représenter les données du jeu dans les variables de votre programme ; Par exemple, on pourra représenter un plateau de bataille navale par un tableau à deux dimensions… mais un tableau de quel type ? avec quel codage des informations ?
 - à certaines méthodes que vous allez développer ; Par exemple pour la bataille navale on pourra penser à développer une méthode qui permet à un joueur de saisir les emplacements de ses bateaux, une autre méthode qui positionne aléatoirement les bateaux à la place du joueur, une méthode qui en fonction des coordonnées de tir calcule les conséquence et met à jour les données, etc.
