@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.3.1/mermaid.min.js"></script>
-    <style type="text/css">div.mermaid {
-        font-family: 'trebuchet ms', verdana, arial;
-        text-align: center;
-    }</style>
-    <title>Algorithm example</title>
-</head>
-<body>
-<pre>
-<div class="mermaid">graph TD
+graph TD
     inputData-->createTable
     createTable-->randomPlayer
     randomPlayer-->placeBoat
@@ -23,7 +10,6 @@
     giveHand-->testPlayerWin
     testPlayerWin-- Yes -->showEnd
 
-
     subgraph initialiser les données du jeu
         inputData(saisir les noms<br/>des joueurs)
         createTable("créer un/des plateau(x)<br/>de jeu(x) vide(s)")
@@ -31,7 +17,7 @@
         placeBoat(placer les bateaux)
     end
 
-    subgraph "Tant qu’aucun joueur n’a gagné"
+    subgraph Tant qu'aucun joueur n'a gagné
         testPlayerWin{Un joueur<br/>a gagné}
         inputShoot(demander au joueur<br/>qui a la main où il tire)
         subgraph réaliser le tir
@@ -43,20 +29,7 @@
 
     showEnd(Annoncer le résultat<br/>de la partie)
 
-    
-</div>
-</pre>
+classDef center text-align: center;
+classDef left text-align: left;
 
-</body>
-
-<script>
-    var config = {
-        startOnLoad:true,
-        theme: 'default',
-        
-    };
-    mermaid.initialize(config);
-    window.mermaid.init(undefined, document.querySelectorAll('mermaid'));
-</script>
-
-</html>
+class inputData,createTable,randomPlayer,placeBoat,inputShoot,updateData,showShoot,giveHand,showEnd,testPlayerWin center;
