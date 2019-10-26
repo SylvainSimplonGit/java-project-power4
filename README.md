@@ -40,20 +40,6 @@ comme dans l’exemple ci-dessous :
   
   Par exemple, pour une bataille navale (la bataille navale est assez difficile à implémenter), l’algorithme principal
   peut être :
-  
-    - initialiser les données du jeu :
-      - saisir les noms des joueurs
-      - créer un/des plateau(x) de jeu(x) vide(s)  
-      - tirer au hasard quel joueur commence   
-      - placer les bateau
-
-      - Tant qu’aucun joueur n’a gagné :
-        - demander au joueur qui a la main où il tire
-        - réaliser le tir :
-          - mettre à jour les données du jeu
-          - annoncer les conséquences du tir
-        - passer la main à l’autre joueur
-    - Annoncer le résultat de la partie
 
 <p align="center">
  <img width="60%" src="resources/brief/Algorithme-exemple.png">
