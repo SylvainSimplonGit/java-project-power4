@@ -22,8 +22,12 @@ Il faut choisir un type pour les éléments du tableau (char, int, String, …) 
 ### Algorithme du jeu
 
 <p align="center">
- <img width="60%" src="resources/Algorithm.png">
+ <img width="60%" src="resources/algorithm.png">
 </p>
+
+### Modélisation des classes
+
+
 
 ## La notice d'utilisation
 

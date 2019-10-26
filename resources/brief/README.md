@@ -42,7 +42,7 @@ comme dans l’exemple ci-dessous :
   peut être :
 
 <p align="center">
- <img width="60%" src="Algorithm-example.png">
+ <img width="60%" src="algorithm-example.png">
 </p>
 
 - à la façon dont vous allez représenter les données du jeu dans les variables de votre programme ; Par exemple, on pourra représenter un plateau de bataille navale par un tableau à deux dimensions… mais un tableau de quel type ? avec quel codage des informations ?
