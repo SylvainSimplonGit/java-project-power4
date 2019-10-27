@@ -1,5 +1,6 @@
-%%```mermaid
+```mermaid
 graph TD;
+    beginGame((Début<br/>du jeu))-->player1
 
     player1-->inputName
     inputName-->testNameUsed
@@ -22,20 +23,23 @@ graph TD;
     updateTable-->showShoot;
     showShoot-->test4Cases;
 
-    test4Cases-- yes -->showEnd
+    test4Cases-- yes -->showWinner
     test4Cases-- no -->testBoardFill
     testBoardFill-- yes -->giveHand
-    testBoardFill-- no -->showEnd
+    testBoardFill-- no -->showNull
 
     giveHand-->inputShoot;
+
+    showWinner-->endGame
+    showNull-->endGame
 
     subgraph initialiser les données du jeu
         subgraph Saisir le nom des 2 joueurs
             player1[n = 1]
             inputName(Saisir nom du joueur)
-            testNameUsed{Le nom<br/>est-il déjà<br/>utilisé ?}
+            testNameUsed{Le nom<br/>est-il déjà<br/>utilisé}
             inputChar(Choisir le caractère)
-            testCharUsed{Le carctère<br/>est-il déjà<br/>utilisé ?}
+            testCharUsed{Le carctère<br/>est-il déjà<br/>utilisé}
             testNumbePlayer{n == 2}
             player2(n = n + 1)
         end
@@ -45,24 +49,27 @@ graph TD;
     end
 
     subgraph Tant qu'aucun joueur n'a gagné
-        %%testPlayerWin{Un joueur<br/>a gagné}
-        inputShoot(demander au joueur<br/>qui a la main dans<br/>quelle colonne il place son jeton)
+    
+        inputShoot(demander au joueur< qui a la main dans<br/>quelle colonne il place son jeton)
         subgraph Tant qu'il reste de la place dans la colonne
             testColumnFill{La colonne<br/>est pleine}
             subgraph la colonne est pleine
-                inputNewColumn(Afficher :<br/>La colonne est pleine,<br/>choisir une autre colonne<br/>Rappeler les colonnes libres)
+                inputNewColumn[/La colonne est pleine,<br/>choisir une autre colonne<br/>Rappeler les colonnes libres/]
             end
                 subgraph mettre à jour les données du jeu
                     updateTable(mettre à jour<br/>la case choisie)
-                    showShoot(Afficher la grille)
-                    test4Cases{Vérifier <br/>si 4 cases sont<br/>alignées}
-                    testBoardFill{Reste-t-il<br/>des cases vides ?}
+                    showShoot[/Afficher la grille/]
+                    test4Cases{Est-ce que<br/>4 cases sont<br/>alignées}
+                    testBoardFill{Reste-t-il<br/>des cases<br/>vides}
                 end
             giveHand(passer la main<br/>à l'autre joueur)
         end
     end
-
-    showEnd(Annoncer le résultat<br/>de la partie)
+    subgraph Gestion fin de partie
+        showWinner[/le gagnant est<br/>le joueur courant/]
+        showNull[/Aucun gagnant<br/>pour cette partie/]
+        endGame((Fin<br/>du jeu))
+    end
 
 classDef center text-align: center;
 classDef left text-align: left;
@@ -81,4 +88,4 @@ class updateData,giveHand center;
 
 class updateTable,showShoot,test4Cases,testBoardFill center;
 
-class showEnd center;
+class beginGame,showWinner,showNull,endGame center;
