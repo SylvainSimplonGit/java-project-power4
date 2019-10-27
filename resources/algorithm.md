@@ -1,4 +1,4 @@
-```mermaid
+%%```mermaid
 graph TD;
     beginGame((Début<br/>du jeu))-->player1
 
