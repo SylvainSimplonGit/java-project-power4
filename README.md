@@ -34,7 +34,7 @@ Il faut choisir un type pour les éléments du tableau (char, int, String, …) 
 ### Modélisation des classes
 
 <p align="center">
- <img width="60%" src="resources/modelisation.svg">
+ <img width="60%" src="resources/modelisation.png">
 </p>
 
 ## La notice d'utilisation
