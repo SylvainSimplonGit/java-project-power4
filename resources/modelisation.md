@@ -7,21 +7,29 @@ Game: + newPlayer()
 Game: + whoBegin()
 Game: + wherePutToken()
 Game: + hasWinner()
+
 Player: - String name
 Player: - char symbol
 Player: + equals()
 Player: - hasSameName()
 Player: - hasSameSymbol()
+
 Board: - char[][] board
 Board: - int boardWidth
 Board: - int boardHeight
 Board: - int columnWidthMax
 Board: - char[][] STANDARD_DELIMITERS
+Board: - int numberOfSameSymbol
+Board: - String msgAnalyse
 Board: ~ displayBoard()
-Board: + isColumnIsFilled()
-Board: + setPlayerChoice()
-Board: + hasFourTokenAligned()
-Board: + isBoardFilled()
-Board: - centerCharacter
+Board: ~ hasFourTokenAlignedInBoard()
+Board: ~ isBoardFilled()
+Board: ~ setPlayerChoice()
+Board: - centerCharacter()
 Board: - emptyBoard()
 Board: - getDelimiterLine()
+Board: - hasFourTokenAligned()
+Board: - hasFourTokenAlignedInColumn()
+Board: - hasFourTokenAlignedInDiagonal()
+Board: - hasFourTokenAlignedInLine()
+Board: - isColumnIsFilled()
