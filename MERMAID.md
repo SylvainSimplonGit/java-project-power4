@@ -26,6 +26,12 @@ Pour regénérer l'algorithme :
 mmdc -i resources/algorithm.md -o resources/algorithm.png -b transparent
 ```
 
+Pour regénérer la modelisation :
+
+```cmd
+mmdc -i resources/modelisation.md -o resources/modelisation.png -b transparent
+```
+
 ## mermaid syntaxe
 
 [Mermaid documentation](https://mermaidjs.github.io/#/)
