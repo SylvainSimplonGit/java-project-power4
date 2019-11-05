@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class TestUnit {
 
     // Gagnant sur l'axe ligne 1
@@ -51,6 +53,37 @@ class TestUnit {
     };
 
     TestUnit() {
+        Scanner scInput = new Scanner(System.in);
+//        this.testPlayer(scInput);
+
+        scInput.close();
+    }
+
+//    private void testPlayer(Scanner scInput) {
+//        Players players = new Players();
+//
+//        for (int nbPlayer = 0; nbPlayer != 2; nbPlayer++) {
+//            // Ask name of player
+//            System.out.println("Joueur " + (nbPlayer  + 1) + ", veuillez entrer votre nom :");
+//            String nameInput = scInput.nextLine();
+//            Player player = new Player();
+//            player.setName(nameInput);
+//            do {
+//                // Ask symbol of player
+//                System.out.println("Joueur " + (nbPlayer + 1) + ", veuillez entrer votre symbole :");
+//                char symbolInput = scInput.next(".").charAt(0);
+//                player.setSymbol(symbolInput);
+//                scInput.nextLine();
+//                // Test if player exist
+//                if (players.playerExist(player))
+//                    System.out.println("Le symbole " + symbolInput + " est déjà choisi par le joueur précédent !");
+//            } while (players.playerExist(player));
+//            // If Player doesn't exist add him
+//            players.addPlayer(player);
+//        }
+//    }
+
+    private void testBoard() {
         int nbLine = 6;
         int nbCol = 7;
         Board board = new Board(nbLine, nbCol);
@@ -68,7 +101,5 @@ class TestUnit {
         board.displayBoard();
 
         boolean rslt = board.hasFourTokenAlignedInBoard();
-
-//        System.out.println("Le plateau " + ((board.hasFourTokenAligned() > -1) ? "a un gagnant à la ligne " + board.hasFourTokenAligned() + " !" : "n'a pas de gagnant."));
     }
 }
