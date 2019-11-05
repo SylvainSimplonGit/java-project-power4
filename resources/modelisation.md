@@ -1,18 +1,42 @@
 ```mermaid
 classDiagram
-Game --> "2" Player : contient
+Game --> "1" Players : contient
 Game --> "1" Board : contient
-Game: + ArrayList Player
-Game: + newPlayer()
-Game: + whoBegin()
-Game: + wherePutToken()
-Game: + hasWinner()
+Players --> "2" Player : contient
+
+Game: - int nbLine
+Game: - int nbCol
+Game: - Players players
+Game: - Board board
+Game: - int nbPlayerMax
+
+Game: - changePlayer()
+Game: - displayMsgMatchNul()
+Game: - displayMsgWinner()
+Game: - initializeGame()
+Game: - putToken()
+Game: - runtimeGame()
+Game: - wherePutToken()
+Game: - whoBegin()
+
+Players: - ArrayList<> players
+
+Players: ~ addPlayer()
+Players: ~ getPlayer()
+Players: ~ playerExist()
 
 Player: - String name
 Player: - char symbol
+Player: - int playerNumber
+
 Player: + equals()
-Player: - hasSameName()
+Player: ~ getName()
+Player: ~ getPlayerNumber()
+Player: ~ getSymbol()
 Player: - hasSameSymbol()
+Player: ~ setName()
+Player: ~ setPlayerNumber()
+Player: ~ setSymbol()
 
 Board: - char[][] board
 Board: - int boardWidth
@@ -21,6 +45,7 @@ Board: - int columnWidthMax
 Board: - char[][] STANDARD_DELIMITERS
 Board: - int numberOfSameSymbol
 Board: - String msgAnalyse
+
 Board: ~ displayBoard()
 Board: ~ hasFourTokenAlignedInBoard()
 Board: ~ isBoardFilled()

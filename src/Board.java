@@ -76,7 +76,7 @@ public class Board {
         if (!flagFourTokenAligned) {
             flagFourTokenAligned = hasFourTokenAlignedInDiagonal();
         }
-        System.out.println(this.msgAnalyse);
+//        System.out.println(this.msgAnalyse);
         return flagFourTokenAligned;
     }
 
@@ -92,19 +92,19 @@ public class Board {
     }
 
     boolean setPlayerChoice(int col, char symbol) {
-        boolean flagColIsFilled = true;
+        boolean flagColIsPossible = true;
         if (isColumnIsFilled(col)) {
-            flagColIsFilled = false;
+            flagColIsPossible = false;
         } else {
             for (int line = this.boardHeight; line != 0; line--) {
                 if (this.board[line - 1][col] == ' ') {
                     this.board[line - 1][col] = symbol;
-                    flagColIsFilled = true;
+                    flagColIsPossible = true;
                     break;
                 }
             }
         }
-        return flagColIsFilled;
+        return flagColIsPossible;
     }
 
     private String centerCharacter(String str) {
@@ -149,14 +149,20 @@ public class Board {
 
     private boolean hasFourTokenAligned(int line1, int col1, int line2, int col2) {
         boolean flagResult = false;
-        if (this.board[line1][col1] == this.board[line2][col2]) {
-            this.numberOfSameSymbol++;
-            if (this.numberOfSameSymbol == 4) {
-                flagResult = true;
-            }
-        } else {
+        // ToDo bug si 2 case sont remplies de l'espace
+        if (this.board[line1][col1] == ' ') {
             this.numberOfSameSymbol = 1;
+        } else {
+            if (this.board[line1][col1] == this.board[line2][col2]) {
+                this.numberOfSameSymbol++;
+                if (this.numberOfSameSymbol == 4) {
+                    flagResult = true;
+                }
+            } else {
+                this.numberOfSameSymbol = 1;
+            }
         }
+
         return flagResult;
     }
 

@@ -3,9 +3,7 @@ graph TD;
     beginGame((Début<br/>du jeu))-->player1
 
     player1-->inputName
-    inputName-->testNameUsed
-    testNameUsed-- yes -->inputName
-    testNameUsed-- no -->inputChar
+    inputName-->inputChar
     inputChar-->testCharUsed
     testCharUsed-- yes -->inputChar
     testCharUsed-- no -->testNumbePlayer
@@ -37,7 +35,6 @@ graph TD;
         subgraph Saisir le nom des 2 joueurs
             player1[n = 1]
             inputName(Saisir nom du joueur)
-            testNameUsed{Le nom<br/>est-il déjà<br/>utilisé}
             inputChar(Choisir le caractère)
             testCharUsed{Le caractère<br/>est-il déjà<br/>utilisé}
             testNumbePlayer{n == 2}
